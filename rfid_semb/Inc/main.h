@@ -61,6 +61,8 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define SPI2_SCK_FLASH_Pin GPIO_PIN_1
 #define SPI2_SCK_FLASH_GPIO_Port GPIOA
+#define ENABLE_5V_REG_Pin GPIO_PIN_2
+#define ENABLE_5V_REG_GPIO_Port GPIOA
 #define NRSTPD_RFID_Pin GPIO_PIN_3
 #define NRSTPD_RFID_GPIO_Port GPIOA
 #define SPI1_NSS_RFID_Pin GPIO_PIN_4

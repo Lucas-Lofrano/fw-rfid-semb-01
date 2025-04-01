@@ -6,4 +6,4 @@
 /home/lofrano/SEMB_01/fw-workspace/rfid_semb/Src/main.c:293:13:MX_SPI2_Init	8	static
 /home/lofrano/SEMB_01/fw-workspace/rfid_semb/Src/main.c:333:13:MX_TIM2_Init	48	static
 /home/lofrano/SEMB_01/fw-workspace/rfid_semb/Src/main.c:382:13:MX_GPIO_Init	48	static
-/home/lofrano/SEMB_01/fw-workspace/rfid_semb/Src/main.c:433:6:Error_Handler	8	static,ignoring_inline_asm
+/home/lofrano/SEMB_01/fw-workspace/rfid_semb/Src/main.c:447:6:Error_Handler	8	static,ignoring_inline_asm

@@ -387,18 +387,32 @@ static void MX_GPIO_Init(void)
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, NRSTPD_RFID_Pin|nRESET_FLASH_Pin|nWP_FLASH_Pin|nCS_FLASH_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, ENABLE_5V_REG_Pin|NRSTPD_RFID_Pin|nRESET_FLASH_Pin|nWP_FLASH_Pin
+                          |nCS_FLASH_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED_01_Pin|LED_02_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : NRSTPD_RFID_Pin nRESET_FLASH_Pin nWP_FLASH_Pin nCS_FLASH_Pin */
-  GPIO_InitStruct.Pin = NRSTPD_RFID_Pin|nRESET_FLASH_Pin|nWP_FLASH_Pin|nCS_FLASH_Pin;
+  /*Configure GPIO pin : ENABLE_5V_REG_Pin */
+  GPIO_InitStruct.Pin = ENABLE_5V_REG_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(ENABLE_5V_REG_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : NRSTPD_RFID_Pin */
+  GPIO_InitStruct.Pin = NRSTPD_RFID_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(NRSTPD_RFID_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : nRESET_FLASH_Pin nWP_FLASH_Pin nCS_FLASH_Pin */
+  GPIO_InitStruct.Pin = nRESET_FLASH_Pin|nWP_FLASH_Pin|nCS_FLASH_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
