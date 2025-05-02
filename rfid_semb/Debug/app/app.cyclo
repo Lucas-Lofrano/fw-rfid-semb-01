@@ -1,0 +1,10 @@
+../app/app.c:33:9:app_tag_check_registered	3
+../app/app.c:44:9:app_is_tag_manager	1
+../app/app.c:57:9:app_rfid_read_tag_manager	3
+../app/app.c:75:9:app_rfid_insert_new_tag	3
+../app/app.c:96:6:app_config_mode	4
+../app/app.c:140:6:app_door_open	1
+../app/app.c:148:6:app_door_access_denied	1
+../app/app.c:156:6:app_rfid_checks_tag	4
+../app/app.c:193:6:app_init	1
+../app/app.c:201:6:app_loop	1

@@ -73,6 +73,9 @@ void Error_Handler(void);
 #define SPI1_MISO_RFID_GPIO_Port GPIOA
 #define SPI1_MOSI_RFID_Pin GPIO_PIN_7
 #define SPI1_MOSI_RFID_GPIO_Port GPIOA
+#define IRQ_Pin GPIO_PIN_0
+#define IRQ_GPIO_Port GPIOB
+#define IRQ_EXTI_IRQn EXTI0_1_IRQn
 #define nRESET_FLASH_Pin GPIO_PIN_8
 #define nRESET_FLASH_GPIO_Port GPIOA
 #define nWP_FLASH_Pin GPIO_PIN_9
@@ -89,12 +92,12 @@ void Error_Handler(void);
 #define SWCLK_GPIO_Port GPIOA
 #define TIM2_CH1_PWM_Pin GPIO_PIN_15
 #define TIM2_CH1_PWM_GPIO_Port GPIOA
-#define LED_01_Pin GPIO_PIN_3
-#define LED_01_GPIO_Port GPIOB
-#define LED_02_Pin GPIO_PIN_4
-#define LED_02_GPIO_Port GPIOB
-#define PUSH_BUTTON_01_Pin GPIO_PIN_5
-#define PUSH_BUTTON_01_GPIO_Port GPIOB
+#define LED_GREEN_Pin GPIO_PIN_3
+#define LED_GREEN_GPIO_Port GPIOB
+#define LED_BLUE_Pin GPIO_PIN_4
+#define LED_BLUE_GPIO_Port GPIOB
+#define CONFIG_MODE_Pin GPIO_PIN_5
+#define CONFIG_MODE_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

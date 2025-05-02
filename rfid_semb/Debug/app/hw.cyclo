@@ -1,0 +1,12 @@
+../app/hw.c:29:6:hw_delay_ms	1
+../app/hw.c:35:10:hw_tick_ms_get	1
+../app/hw.c:43:6:hw_timer_start	1
+../app/hw.c:52:6:hw_timer_stop	1
+../app/hw.c:58:6:HAL_TIM_PeriodElapsedCallback	2
+../app/hw.c:79:6:hw_servo_init	1
+../app/hw.c:90:6:hw_servo_set_position	2
+../app/hw.c:109:6:hw_servo_unlock	1
+../app/hw.c:127:6:hw_led_toggle	3
+../app/hw.c:143:6:hw_led_write	3
+../app/hw.c:166:6:hw_cpu_stop	1
+../app/hw.c:182:6:HAL_GPIO_EXTI_Callback	3

@@ -1,0 +1,10 @@
+../app/app.c:33:9:app_tag_check_registered	24	static
+../app/app.c:44:9:app_is_tag_manager	16	static
+../app/app.c:57:9:app_rfid_read_tag_manager	24	static
+../app/app.c:75:9:app_rfid_insert_new_tag	24	static
+../app/app.c:96:6:app_config_mode	24	static
+../app/app.c:140:6:app_door_open	8	static
+../app/app.c:148:6:app_door_access_denied	8	static
+../app/app.c:156:6:app_rfid_checks_tag	16	static
+../app/app.c:193:6:app_init	8	static
+../app/app.c:201:6:app_loop	8	static

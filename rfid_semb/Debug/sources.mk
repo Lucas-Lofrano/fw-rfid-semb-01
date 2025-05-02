@@ -25,4 +25,6 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/STM32U0xx_HAL_Driver/Src \
+app \
+app/littlefs \
 
