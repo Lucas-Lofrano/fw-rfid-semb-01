@@ -14,8 +14,6 @@
 #include "rfid.h"
 #include "main.h"
 
-#include "stm32U0xx_hal.h" // Alt
-
 extern SPI_HandleTypeDef hspi1;
 
 // RC522

@@ -16,6 +16,8 @@
 
 // External variables ----------------------------------------------------------
 extern TIM_HandleTypeDef htim2;
+extern bool irq_rfid_flag;
+extern bool config_rfid_flag;
 
 // Functions -------------------------------------------------------------------
 
@@ -157,37 +159,15 @@ void hw_led_write(uint16_t led, uint8_t value)
 
 /*
  ===============================================================================
-                          ##### CPU Functions #####
- ===============================================================================
-*/
-
-// Alt
-
-void hw_cpu_stop(void) {
-
-    HAL_PWR_EnableWakeUpPin(IRQ_Pin);
-
-    // Entrar em STOP mode
-    HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
-
-    SystemClock_Config();  // Função gerada pelo CubeMX
-}
-
-/*
- ===============================================================================
                     ##### Interruption Functions #####
  ===============================================================================
 */
 // Handles interrupts
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin)
 {
 	if(GPIO_Pin == IRQ_Pin)
-	{
-		app_rfid_checks_tag(); // Checks if irq sends a signal
-	}
+		irq_rfid_flag = true;
 
 	if(GPIO_Pin == CONFIG_MODE_Pin)
-	{
-		app_config_mode(); // Enter config mode if the switch sends a signal
-	}
+		config_rfid_flag = true;
 }

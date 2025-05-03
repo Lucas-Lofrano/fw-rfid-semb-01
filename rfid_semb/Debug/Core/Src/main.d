@@ -32,8 +32,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_tim.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_tim_ex.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart.h \
- ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h \
- C:/Users/Codey/OneDrive/Documentos/SEMB/fw-rfid-semb-01/rfid_semb/app/app.h
+ ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h ../app/app.h
 ../Core/Inc/main.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h:
 ../Core/Inc/stm32u0xx_hal_conf.h:
@@ -69,4 +68,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_tim_ex.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h:
-C:/Users/Codey/OneDrive/Documentos/SEMB/fw-rfid-semb-01/rfid_semb/app/app.h:
+../app/app.h:

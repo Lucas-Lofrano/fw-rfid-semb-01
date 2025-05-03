@@ -1,0 +1,12 @@
+../app/AT45DB021E.c:19:6:ATAT45DB_nCS_start_transaction	8	static
+../app/AT45DB021E.c:24:6:ATAT45DB_nCS_finish_transaction	8	static
+../app/AT45DB021E.c:29:6:AT45DB_write_protect_disable	16	static
+../app/AT45DB021E.c:35:10:ATAT45DB_read_sr	16	static
+../app/AT45DB021E.c:55:6:AT45DB_conf_bin	16	static
+../app/AT45DB021E.c:74:6:AT45DB_is_sector_protect_active	24	static
+../app/AT45DB021E.c:85:6:AT45DB_is_sr_ready	24	static
+../app/AT45DB021E.c:95:5:lfs_AT45DB_mount	24	static
+../app/AT45DB021E.c:117:5:lfs_AT45DB_read	48	static
+../app/AT45DB021E.c:150:5:lsf_AT45DB_write	56	static
+../app/AT45DB021E.c:195:5:lfs_AT45DB_erase	32	static
+../app/AT45DB021E.c:223:5:lfs_AT45DB_sync	16	static

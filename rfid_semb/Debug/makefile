@@ -62,8 +62,8 @@ all: main-build
 main-build: rfid_semb.elf secondary-outputs
 
 # Tool invocations
-rfid_semb.elf rfid_semb.map: $(OBJS) $(USER_OBJS) C:\Users\Codey\OneDrive\Documentos\SEMB\fw-rfid-semb-01\rfid_semb\STM32U031K6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "rfid_semb.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\Codey\OneDrive\Documentos\SEMB\fw-rfid-semb-01\rfid_semb\STM32U031K6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="rfid_semb.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+rfid_semb.elf rfid_semb.map: $(OBJS) $(USER_OBJS) /home/lofrano/SEMB_01/fw-workspace/rfid_semb/STM32U031K6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "rfid_semb.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"/home/lofrano/SEMB_01/fw-workspace/rfid_semb/STM32U031K6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="rfid_semb.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

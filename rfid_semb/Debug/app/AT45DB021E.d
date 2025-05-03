@@ -1,4 +1,4 @@
-app/rfid.o: ../app/rfid.c ../app/rfid.h ../Core/Inc/main.h \
+app/AT45DB021E.o: ../app/AT45DB021E.c ../Core/Inc/main.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h \
  ../Core/Inc/stm32u0xx_hal_conf.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h \
@@ -32,8 +32,8 @@ app/rfid.o: ../app/rfid.c ../app/rfid.h ../Core/Inc/main.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_tim.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_tim_ex.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart.h \
- ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h
-../app/rfid.h:
+ ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h \
+ ../app/AT45DB021E.h ../app/littlefs/lfs.h ../app/littlefs/lfs_util.h
 ../Core/Inc/main.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h:
 ../Core/Inc/stm32u0xx_hal_conf.h:
@@ -69,3 +69,6 @@ app/rfid.o: ../app/rfid.c ../app/rfid.h ../Core/Inc/main.h \
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_tim_ex.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h:
+../app/AT45DB021E.h:
+../app/littlefs/lfs.h:
+../app/littlefs/lfs_util.h:

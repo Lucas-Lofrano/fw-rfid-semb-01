@@ -33,9 +33,7 @@ void hw_servo_unlock(void); // Alt
 void hw_led_toggle(uint16_t led);
 void hw_led_write(uint16_t led, uint8_t value);
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
 void hw_cpu_stop(void);
-
 
 #ifdef __cplusplus
 }

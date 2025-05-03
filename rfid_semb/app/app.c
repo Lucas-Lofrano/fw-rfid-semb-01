@@ -11,6 +11,9 @@
 // Includes --------------------------------------------------------------------
 #include <stdint.h>
 #include <stdbool.h>
+#include "lfs.h"
+#include "AT45DB021E.h"
+#include "log.h"
 #include "app.h"
 #include "main.h"
 #include "hw.h"
@@ -21,6 +24,10 @@ extern uint8_t MFRC522_CheckTag(uint32_t* id);
 extern uint32_t tags_database[];
 extern uint8_t tags_number;
 extern uint8_t pos;
+
+bool irq_rfid_flag = false;
+bool config_rfid_flag = false;
+
 
 // Functions -------------------------------------------------------------------
 /*
@@ -86,6 +93,7 @@ uint8_t app_rfid_insert_new_tag(void)
 	if(new_tag_ID)
 	{
 		tags_database[tags_number] = new_tag_ID;
+		log_append(new_tag_ID, 'R');
 		tags_number++;
 		return 1;
 	}
@@ -168,6 +176,8 @@ void app_rfid_checks_tag(void)
 
 		if(app_tag_check_registered(tagID))
 		{
+			int status = log_append(tagID, 'E');
+			UNUSED(status);
 			app_door_open();
 		}
 		else
@@ -177,7 +187,6 @@ void app_rfid_checks_tag(void)
 
 	}
 	 debouncing_time_ms = hw_tick_ms_get();
-
 }
 
 
@@ -186,25 +195,28 @@ void app_rfid_checks_tag(void)
                     ##### Program Startup Functions #####
  ===============================================================================
 */
-
-// Alt
-
 // App entry point
 void app_init(void)
 {
+	int status = log_init();
+	UNUSED(status);
+
     MFRC522_Init();
     hw_servo_init();
     hw_servo_set_position(SERVO_CLOSED); // Garantir posição inicial como fechada
 }
 
-// Infinite loop after initialization phase
-void app_loop(void) {
-    while (1) {
+void app_loop(void)
+{
+	if (irq_rfid_flag)
+	{
+		app_rfid_checks_tag();
+		irq_rfid_flag = !irq_rfid_flag;
+	}
 
-        // Entrar em STOP mode até que um cartão seja detectado
-        hw_cpu_stop();
-
-        // Dê tempo suficiente para processar o cartão antes de voltar a dormir
-        hw_delay_ms(500);
-    }
+	if (config_rfid_flag)
+	{
+		app_config_mode();
+		config_rfid_flag = !config_rfid_flag;
+	}
 }

@@ -1,4 +1,5 @@
-app/app.o: ../app/app.c ../app/app.h ../Core/Inc/main.h \
+app/app.o: ../app/app.c ../app/littlefs/lfs.h ../app/littlefs/lfs_util.h \
+ ../app/AT45DB021E.h ../app/log.h ../app/app.h ../Core/Inc/main.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h \
  ../Core/Inc/stm32u0xx_hal_conf.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_rcc.h \
@@ -34,6 +35,10 @@ app/app.o: ../app/app.c ../app/app.h ../Core/Inc/main.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart.h \
  ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal_uart_ex.h ../app/hw.h \
  ../app/rfid.h
+../app/littlefs/lfs.h:
+../app/littlefs/lfs_util.h:
+../app/AT45DB021E.h:
+../app/log.h:
 ../app/app.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32U0xx_HAL_Driver/Inc/stm32u0xx_hal.h:
